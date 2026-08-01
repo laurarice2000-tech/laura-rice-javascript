@@ -1,3 +1,3 @@
 # laura-rice-javascript
-Portfolio Project for Intro to Programming Course with Code the Dream
+A portfolio project built during the Code the Dream Intro to Programming course.
 Laura Alleyne Rice
