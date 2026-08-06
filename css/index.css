@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(176, 224, 230);
+    color: rgb(64, 64, 64);
+    font-family: "Inter", sans-serif;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+nav {
+    margin-bottom: 24px;
+}
+
+img {
+    margin-bottom: 24px;
+}
+
+#About, #Experience, #Connect {
+    margin-bottom: 32px;
+    padding: 8px;
+}
+
+#Connect {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+}
