@@ -38,6 +38,8 @@ img {
 }
 
 .Experience-block {
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid rgb(120, 140, 170);
@@ -47,6 +49,11 @@ img {
 .Experience-header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+.Experience-description {
+    width: 100%;
 }
 
 #About, #Experience, #Skills, #Projects, #Connect {
