@@ -26,6 +26,9 @@ h3 {
 
 nav {
     margin-bottom: 24px;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
 }
 
 img {
@@ -41,7 +44,12 @@ img {
     border-radius: 10px;
 }
 
-#About, #Experience, #Connect {
+.Experience-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#About, #Experience, #Skills, #Projects, #Connect {
     margin-bottom: 32px;
     padding: 8px;
 }
