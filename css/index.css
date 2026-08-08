@@ -37,23 +37,28 @@ img {
     height: auto;
 }
 
-.Experience-block {
+.Experience-list {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgb(120, 140, 170);
-    border-radius: 10px;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.Experience-block {
+    flex: 1 1 45%;
 }
 
 .Experience-header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    gap: 15px
 }
 
 .Experience-description {
-    width: 100%;
+    line-height: 1.6;
 }
 
 #About, #Experience, #Skills, #Projects, #Connect {
