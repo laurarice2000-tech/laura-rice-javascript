@@ -37,7 +37,7 @@ img {
     height: auto;
 }
 
-.Experience-list {
+.experience-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,27 +46,27 @@ img {
     list-style: none;
 }
 
-.Experience-block {
+.experience-block {
     flex: 1 1 45%;
 }
 
-.Experience-header {
+.experience-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px
 }
 
-.Experience-description {
+.experience-description {
     line-height: 1.6;
 }
 
-#About, #Experience, #Skills, #Projects, #Connect {
+#about, #experience, #skills, #projects, #connect {
     margin-bottom: 32px;
     padding: 8px;
 }
 
-#Connect {
+#connect {
     margin-bottom: 24px;
     text-align: center;
 }
@@ -95,7 +95,7 @@ li {
     opacity: 0.7;
 }
 
-#Skills ul {
+#skills ul {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
