@@ -32,3 +32,14 @@ for (let i = 0; i < skills.length; i++) {
 
 // Selects the Leave a Message form by its name attribute
 const messageForm = document.querySelector('[name="leave_message"]');
+
+// Handle form submission
+messageForm.addEventListener("submit", () => {
+    // Get the values entered in the form fields
+    const name = event.target.usersName.value;
+    const email = event.target.usersEmail.value;
+    const message = event.target.usersMessage.value;
+
+    // Log the submitted form values to the console
+    console.log(name, email, message);
+});
