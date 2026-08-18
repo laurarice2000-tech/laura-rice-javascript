@@ -34,7 +34,10 @@ for (let i = 0; i < skills.length; i++) {
 const messageForm = document.querySelector('[name="leave_message"]');
 
 // Handle form submission
-messageForm.addEventListener("submit", () => {
+messageForm.addEventListener("submit", function(event) {
+    // Prevent the form from refreshing the page
+    event.preventDefault();
+
     // Get the values entered in the form fields
     const name = event.target.usersName.value;
     const email = event.target.usersEmail.value;
@@ -42,4 +45,7 @@ messageForm.addEventListener("submit", () => {
 
     // Log the submitted form values to the console
     console.log(name, email, message);
+
+    // Clear the form after submission
+    messageForm.reset();
 });
