@@ -39,12 +39,12 @@ messageForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Get the values entered in the form fields
-    const name = event.target.usersName.value;
-    const email = event.target.usersEmail.value;
-    const message = event.target.usersMessage.value;
+    const userName = event.target.usersName.value;
+    const userEmail = event.target.usersEmail.value;
+    const userMessage = event.target.usersMessage.value;
 
     // Log the submitted form values to the console
-    console.log(name, email, message);
+    console.log(userName, userEmail, userMessage);
 
     // Clear the form after submission
     event.target.reset();
