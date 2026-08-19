@@ -47,5 +47,5 @@ messageForm.addEventListener("submit", function(event) {
     console.log(name, email, message);
 
     // Clear the form after submission
-    messageForm.reset();
+    event.target.reset();
 });
