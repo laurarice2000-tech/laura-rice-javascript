@@ -61,9 +61,34 @@ img {
     line-height: 1.6;
 }
 
-#about, #experience, #skills, #projects, #connect {
+#about, #experience, #skills, #projects, #connect, #message-form {
     margin-bottom: 32px;
     padding: 8px;
+}
+
+#message-form input, #message-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#message-form textarea {
+    min-height: 120px;
+}
+
+#message-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+#message-form button:hover {
+    background-color: rgb(45, 75, 125);
+    color: white;
 }
 
 #connect {
@@ -99,4 +124,18 @@ li {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+}
+
+@media (max-width: 600px) {
+    #message-form input, #message-form textarea {
+        padding: 12px;
+    }
+
+    #message-form textarea {
+        min-height: 150px;
+    }
+
+    #message-form button {
+        width: 100%;
+    }
 }
