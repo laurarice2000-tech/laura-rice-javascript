@@ -18,7 +18,7 @@ footer.appendChild(copyright);
 const skills = ["C++", "Python", "Java", "JavaScript", "HTML", "CSS", "MySQL", "Git", "GitHub", "Visual Studio Code", "Microsoft Office Suite", "Troubleshooting", "Debugging"];
 
 // Select the Skills section from the DOM using its ID 
-const skillsSection = document.getElementById("Skills");
+const skillsSection = document.getElementById("skills");
 
 // Select the <ul> element inside the Skills section
 const skillsList = skillsSection.querySelector("ul");
@@ -46,6 +46,32 @@ messageForm.addEventListener("submit", function(event) {
     // Log the submitted form values to the console
     console.log(userName, userEmail, userMessage);
 
+    // Select the Messages section by its ID
+    const messageSection = document.querySelector("#messages");
+
+    // Select the message list within the Messages section
+    const messageList = messageSection.querySelector("ul");
+
+    // Create a new list item for the message
+    const newMessage = document.createElement("li");
+
+    // Add the user's name, email, and message to the new list item
+    newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> <span>${userMessage}</span>`;
+
+    // Create a remove button for the message
+    const removeButton = document.createElement("button");
+
+    // Set the remove button text
+    removeButton.innerText = "remove";
+
+    removeButton.setAttribute("type", "button");
+
+    removeButton.addEventListener("click", function(event) {
+        const entry = removeButton.parentNode;
+        entry.remove();
+        newMessage.appendChild(removeButton);
+        messageList.appendChild(newMessage);
+    });
     // Clear the form after submission
     event.target.reset();
 });
