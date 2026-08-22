@@ -50,7 +50,7 @@ messageForm.addEventListener("submit", function(event) {
     const messageSection = document.querySelector("#messages");
 
     // Select the message list within the Messages section
-    const messageList = messageSection.querySelector("ul");
+    const messageList = messageSection.querySelector("#message-list");
 
     // Create a new list item for the submitted message
     const newMessage = document.createElement("li");
@@ -58,17 +58,34 @@ messageForm.addEventListener("submit", function(event) {
     // Add the user's name, email, and message
     newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> <span>${userMessage}</span>`;
 
+    // Create and configure the edit button
+    const editButton = document.createElement("button");
+    editButton.innerText = "edit";
+    editButton.setAttribute("type", "button");
+
+    // Handle editing the message
+    editButton.addEventListener("click", function() {
+        const entry = editButton.parentNode;
+        const message = entry.querySelector("span");
+
+        const editField = document.querySelector("#usersMessage");
+        editField.value = message.textContent;
+
+        //entry.appendChild(editField);
+    });
+
     // Create a remove button for the message
     const removeButton = document.createElement("button");
     removeButton.innerText = "remove";
     removeButton.setAttribute("type", "button");
 
-    // Remove the button when the button is clicked
+    // Remove the message when the button is clicked
     removeButton.addEventListener("click", function() {
         const entry = removeButton.parentNode;
         entry.remove();
     });
 
+    newMessage.appendChild(editButton);
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 

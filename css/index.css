@@ -91,6 +91,17 @@ img {
     color: white;
 }
 
+#messages button {
+    margin-left: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#messages button:hover {
+    background-color: rgb(45, 75, 125);
+    color: white;
+}
+
 #connect {
     margin-bottom: 24px;
     text-align: center;
