@@ -1,4 +1,4 @@
-// Create and add the footer to the body
+// Create and add the footer to the page
 const footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 
@@ -17,15 +17,78 @@ footer.appendChild(copyright);
 // Create an array containing my technical skills
 const skills = ["C++", "Python", "Java", "JavaScript", "HTML", "CSS", "MySQL", "Git", "GitHub", "Visual Studio Code", "Microsoft Office Suite", "Troubleshooting", "Debugging"];
 
-// Select the Skills section from the DOM using its ID 
-const skillsSection = document.getElementById("Skills");
+// Select the Skills section from the DOM 
+const skillsSection = document.getElementById("skills");
 
-// Select the <ul> element inside the Skills section
+// Select the skills list within the Skills section
 const skillsList = skillsSection.querySelector("ul");
 
-// Loop through the skills array and create a list item for each skill
+// Add each skill to the skills list
 for (let i = 0; i < skills.length; i++) {
     const skill = document.createElement("li");
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
 }
+
+// Select the Leave a Message form
+const messageForm = document.querySelector('[name="leave_message"]');
+
+// Handle form submission
+messageForm.addEventListener("submit", function(event) {
+    // Prevent the form from refreshing the page
+    event.preventDefault();
+
+    // Get the values entered in the form fields
+    const userName = event.target.usersName.value;
+    const userEmail = event.target.usersEmail.value;
+    const userMessage = event.target.usersMessage.value;
+
+    // Log the submitted form values to the console
+    console.log(userName, userEmail, userMessage);
+
+    // Select the Messages section
+    const messageSection = document.querySelector("#messages");
+
+    // Select the message list within the Messages section
+    const messageList = messageSection.querySelector("#message-list");
+
+    // Create a new list item for the submitted message
+    const newMessage = document.createElement("li");
+
+    // Add the user's name, email, and message
+    newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> <span>${userMessage}</span>`;
+
+    // Create and configure the edit button
+    const editButton = document.createElement("button");
+    editButton.innerText = "edit";
+    editButton.setAttribute("type", "button");
+
+    // Handle editing the message
+    editButton.addEventListener("click", function() {
+        const entry = editButton.parentNode;
+        const message = entry.querySelector("span");
+
+        const editField = document.querySelector("#usersMessage");
+        editField.value = message.textContent;
+
+        //entry.appendChild(editField);
+    });
+
+    // Create a remove button for the message
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "remove";
+    removeButton.setAttribute("type", "button");
+
+    // Remove the message when the button is clicked
+    removeButton.addEventListener("click", function() {
+        const entry = removeButton.parentNode;
+        entry.remove();
+    });
+
+    newMessage.appendChild(editButton);
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+
+    // Clear the form after submission
+    event.target.reset();
+});
