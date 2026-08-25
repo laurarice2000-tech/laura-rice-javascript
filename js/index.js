@@ -50,7 +50,7 @@ messageForm.addEventListener("submit", function(event) {
     const messageSection = document.querySelector("#messages");
 
     // Select the message list within the Messages section
-    const messageList = messageSection.querySelector("#message-list");
+    const messageList = messageSection.querySelector("ul");
 
     // Create a new list item for the submitted message
     const newMessage = document.createElement("li");
@@ -68,10 +68,31 @@ messageForm.addEventListener("submit", function(event) {
         const entry = editButton.parentNode;
         const message = entry.querySelector("span");
 
-        const editField = document.querySelector("#usersMessage");
+        const editField = document.createElement("textarea");
         editField.value = message.textContent;
 
-        //entry.appendChild(editField);
+        entry.appendChild(editField);
+
+        message.style.display = "none";
+        editButton.style.display = "none";
+
+        // Create and configure the save button
+        const saveButton = document.createElement("button");
+        saveButton.innerText = "save";
+        saveButton.setAttribute("type", "button");
+
+        entry.appendChild(saveButton);
+
+        saveButton.addEventListener("click", function() {
+            //console.log("Save button clicked");
+            const newMessageText = editField.value;
+            message.textContent = newMessageText;
+
+            editField.style.display = "none";
+            saveButton.style.display = "none";
+            message.style.display = "inline";
+            editButton.style.display = "inline";
+        });
     });
 
     // Create a remove button for the message
