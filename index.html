@@ -12,81 +12,82 @@
 
         <nav>
             <ul>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Experience">Experience</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Connect">Connect</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#connect">Connect</a></li>
+                <li><a href="#message-form">Leave a Message</a></li>
             </ul>
         </nav>
     </header>
 
     <img src="./images/laura-rice-headshot.jpg" alt="Professional photo of Laura Rice">
 
-    <section id="About">
+    <section id="about">
         <h2>About</h2>
         <p>
             Hi, my name is <strong>Laura Rice</strong>. I am a <strong>creative and hardworking individual</strong> who enjoys learning new skills, solving problems, and finding new ways to turn ideas into reality. I am passionate about <em>personal growth</em>, <em>creativity</em>, and <em>making a positive impact</em> through the work I do.
         </p>
     </section>
 
-    <section id="Experience">
+    <section id="experience">
         <h2>Experience</h2>
 
-        <ul class="Experience-list">
-            <li class="Experience-block">
-                <div class="Experience-header">
+        <ul class="experience-list">
+            <li class="experience-block">
+                <div class="experience-header">
                     <h3>Small Business Owner - InnovatedByLaura</h3>
                     <p>January 2018 - Present</p>
                 </div>
-                <p class="Experience-description">
+                <p class="experience-description">
                     Designed and created handmade products while managing an Etsy shop, including product photography, inventory, order fulfillment, and customer communication. Promoted business growth through social media marketing and local vendor events.
                 </p>
             </li>
 
-            <li class="Experience-block">
-                <div class="Experience-header">
+            <li class="experience-block">
+                <div class="experience-header">
                     <h3>Web Development Student - Code the Dream</h3>
                     <p>July 2026 - Present</p>
                 </div>
-                <p class="Experience-description">
+                <p class="experience-description">
                     Developed programming skills through hands-on projects using HTML, CSS, JavaScript, Git, and GitHub while practicing problem-solving and debugging.
                 </p>
             </li>
 
-            <li class="Experience-block">
-                <div class="Experience-header">
+            <li class="experience-block">
+                <div class="experience-header">
                     <h3>Nutrition Club Team Member - Lighthouse Nutrition & Shamrock Nutrition</h3>
                     <p>May 2026 - Present</p>
                 </div>
-                <p class="Experience-description">
+                <p class="experience-description">
                     Provide customer service, prepare specialty beverages, process orders, maintain an organized workspace, and collaborate with team members to create a positive customer experience.
                 </p>
             </li>
 
-            <li class="Experience-block">
-                <div class="Experience-header">
+            <li class="experience-block">
+                <div class="experience-header">
                     <h3>Intern - Orange County Department of Social Services</h3>
                     <p>July 2019 - August 2019</p>
                 </div>
-                <p class="Experience-description">
+                <p class="experience-description">
                     Organized and reviewed client files with maintaining accuracy, confidentiality, and attention to detail.
                 </p>
             </li>
         </ul>
     </section>
 
-    <section id="Skills">
+    <section id="skills">
         <h2>Skills</h2>
         <ul></ul>
     </section>
 
-    <section id="Projects">
+    <section id="projects">
         <h2>Projects</h2>
         <ul></ul>
     </section>
 
-    <section id="Connect">
+    <section id="connect">
         <h2>Connect</h2>
         <ul class="social-links">
             <li>
@@ -100,6 +101,31 @@
                 </a>
             </li>
         </ul>
+    </section>
+
+    <section id="message-form">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+            
+            <label for="usersName">Name:</label>
+            <input type="text" name="usersName" id="usersName" required />
+            <br>
+
+            <label for="usersEmail">Email:</label>
+            <input type="email" name="usersEmail" id="usersEmail" required />
+            <br>
+
+            <label for="usersMessage">Message:</label>
+            <textarea name="usersMessage" id="usersMessage" required></textarea>
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
     </section>
 
     <script src="js/index.js"></script>
