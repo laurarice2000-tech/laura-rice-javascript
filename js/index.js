@@ -113,3 +113,9 @@ messageForm.addEventListener("submit", function(event) {
     // Clear the form after submission
     event.target.reset();
 });
+
+// Fetch and parse GitHub repository data
+fetch("https://api.github.com/users/laurarice2000-tech/repos")
+    .then(function(response) {
+        return response.json();
+    })
