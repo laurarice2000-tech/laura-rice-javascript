@@ -119,3 +119,7 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
     .then(function(response) {
         return response.json();
     })
+    .then(function(repos) {
+        const repositories = repos;
+        console.log(repositories);
+    })
