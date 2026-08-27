@@ -122,6 +122,13 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
     .then(function(repos) {
         const repositories = repos;
         console.log(repositories);
+
+        // Add each GitHub repository to the Projects list
+        for (let i = 0; i < repositories.length; i++) {
+            const project = document.createElement("li");
+            project.innerText = repositories[i]["name"];
+            projectList.appendChild(project);
+        }
     })
     .catch(function(error) {
         console.log(error);
@@ -132,10 +139,3 @@ const projectSection = document.querySelector("#projects");
 
 // Select the project list within the Projects section
 const projectList = projectSection.querySelector("ul");
-
-// Add each GitHub repository to the Projects list
-for (let i = 0; i < repositories.length; i++) {
-    const project = document.createElement("li");
-    project.innerText = repositories[i]["name"];
-    projectList.appendChild(project);
-}
