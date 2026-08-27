@@ -123,3 +123,6 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
         const repositories = repos;
         console.log(repositories);
     })
+    .catch(function(error) {
+        console.log(error);
+    })
