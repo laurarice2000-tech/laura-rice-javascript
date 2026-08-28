@@ -129,6 +129,9 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
         const repositories = repos;
         console.log(repositories);
 
+        return repositories;
+    })
+    .then(function(repositories) {
         // Add each GitHub repository to the Projects list
         for (let i = 0; i < repositories.length; i++) {
             const project = document.createElement("li");
