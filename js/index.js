@@ -114,6 +114,12 @@ messageForm.addEventListener("submit", function(event) {
     event.target.reset();
 });
 
+// Select the Projects section
+const projectSection = document.querySelector("#projects");
+
+// Select the project list within the Projects section
+const projectList = projectSection.querySelector("ul");
+
 // Fetch and parse GitHub repository data
 fetch("https://api.github.com/users/laurarice2000-tech/repos")
     .then(function(response) {
@@ -132,10 +138,7 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
     })
     .catch(function(error) {
         console.log(error);
+        const errorMessage = document.createElement("p");
+        errorMessage.innerText = "Unable to load projects at this time. Please try again later.";
+        projectSection.appendChild(errorMessage);
     });
-
-// Select the Projects section
-const projectSection = document.querySelector("#projects");
-
-// Select the project list within the Projects section
-const projectList = projectSection.querySelector("ul");
