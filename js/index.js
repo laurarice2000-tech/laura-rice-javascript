@@ -113,3 +113,35 @@ messageForm.addEventListener("submit", function(event) {
     // Clear the form after submission
     event.target.reset();
 });
+
+// Select the Projects section
+const projectSection = document.querySelector("#projects");
+
+// Select the project list within the Projects section
+const projectList = projectSection.querySelector("ul");
+
+// Fetch and parse GitHub repository data
+fetch("https://api.github.com/users/laurarice2000-tech/repos")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(repos) {
+        const repositories = repos;
+        console.log(repositories);
+
+        return repositories;
+    })
+    .then(function(repositories) {
+        // Add each GitHub repository to the Projects list
+        for (let i = 0; i < repositories.length; i++) {
+            const project = document.createElement("li");
+            project.innerText = repositories[i]["name"];
+            projectList.appendChild(project);
+        }
+    })
+    .catch(function(error) {
+        console.log(error);
+        const errorMessage = document.createElement("p");
+        errorMessage.innerText = "Unable to load projects at this time. Please try again later.";
+        projectSection.appendChild(errorMessage);
+    });

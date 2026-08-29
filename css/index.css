@@ -137,6 +137,17 @@ li {
     gap: 16px;
 }
 
+#projects ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0;
+}
+
+#projects li {
+    padding: 8px;
+}
+
 @media (max-width: 600px) {
     #message-form input, #message-form textarea {
         padding: 12px;
