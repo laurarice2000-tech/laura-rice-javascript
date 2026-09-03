@@ -8,3 +8,20 @@ const catInfo = document.getElementById("cat-info");
 // Test HTML element selection
 console.log(catResults);
 console.log(catInfo);
+
+// Store the API URL for the cat image search request
+const searchURL = "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit=6";
+
+// Set up the API request options
+const requestOptions = {
+    method: "GET",
+    headers: {
+        "x-api-key": "live_KcKz112YhgHDjzFW8h1S9BCLUHjIC5OyFftHxvAQyAlZXWo2ykAScieo0gpoPP9f"
+    }
+};
+
+// Send a GET request to TheCatAPI
+fetch(searchURL, requestOptions)
+    .then((response) => {
+        console.log(response);
+    });
