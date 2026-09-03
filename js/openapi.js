@@ -33,6 +33,11 @@ fetch(searchURL, requestOptions)
 
             // Create an image element for each cat
             const catImage = document.createElement("img");
+
+            // Set the image source to the cat's URL
+            catImage.src = cat.url;
+
             console.log(catImage);
+            catResults.appendChild(catImage);
         });
     });
