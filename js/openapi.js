@@ -20,11 +20,15 @@ const requestOptions = {
     }
 };
 
-// Send a GET request to TheCatAPI
+// Request and process cat data from TheCatAPI
 fetch(searchURL, requestOptions)
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         console.log(data);
+
+        data.forEach((cat) => {
+            console.log(cat);
+        });
     });
