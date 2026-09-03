@@ -30,5 +30,9 @@ fetch(searchURL, requestOptions)
 
         data.forEach((cat) => {
             console.log(cat);
+
+            // Create an image element for each cat
+            const catImage = document.createElement("img");
+            console.log(catImage);
         });
     });
