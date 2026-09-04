@@ -49,7 +49,22 @@ fetch(searchURL, requestOptions)
 
                 console.log(detailURL);
 
-                fetch(detailURL, requestOptions);
+                // Request details for the selected cat
+                fetch(detailURL, requestOptions)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log(data);
+
+                        // Create an image element for the selected cat
+                        const detailImage = document.createElement("img");
+
+                        // Set the image source to the selected cat's URL
+                        detailImage.src = data.url;
+
+                        console.log(detailImage);
+                    })
             });
 
             console.log(catImage);
