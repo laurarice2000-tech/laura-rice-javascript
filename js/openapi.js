@@ -9,6 +9,7 @@ const catInfo = document.getElementById("cat-info");
 console.log(catResults);
 console.log(catInfo);
 
+// ----- ENDPOINT 1: CAT IMAGE SEARCH -----
 // Store the API URL for the cat image search request
 const searchURL = "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit=6";
 
@@ -46,3 +47,5 @@ fetch(searchURL, requestOptions)
             catResults.appendChild(catImage);
         });
     });
+
+// ----- ENDPOINT 2: SELECTED CAT DETAILS -----
