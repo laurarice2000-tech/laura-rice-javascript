@@ -37,6 +37,11 @@ fetch(searchURL, requestOptions)
             // Set the image source to the cat's URL
             catImage.src = cat.url;
 
+            // Identify the selected cat
+            catImage.addEventListener("click", () => {
+                console.log(cat.id);
+            });
+
             console.log(catImage);
             catResults.appendChild(catImage);
         });
