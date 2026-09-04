@@ -41,11 +41,18 @@ fetch(searchURL, requestOptions)
             // Identify the selected cat
             catImage.addEventListener("click", () => {
                 console.log(cat.id);
+
+                // ----- ENDPOINT 2: SELECTED CAT DETAILS -----
+
+                // Create the detail URL for the selected cat
+                const detailURL = `https://api.thecatapi.com/v1/images/${cat.id}`;
+
+                console.log(detailURL);
+
+                fetch(detailURL, requestOptions);
             });
 
             console.log(catImage);
             catResults.appendChild(catImage);
         });
     });
-
-// ----- ENDPOINT 2: SELECTED CAT DETAILS -----
