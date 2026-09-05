@@ -76,6 +76,26 @@ fetch(searchURL, requestOptions)
 
                         // Add the breed name to the details section
                         catInfo.appendChild(breedName);
+
+                        // Get the selected cat's temperament
+                        console.log("Temperament: ", data.breeds[0].temperament);
+
+                        const temperamentText = document.createElement("p");
+                        temperamentText.textContent = "Temperament: " + data.breeds[0].temperament;
+                        console.log(temperamentText);
+
+                        // Add the temperament to the details section
+                        catInfo.appendChild(temperamentText);
+
+                        // Get the selected cat's origin
+                        console.log("Origin: ", data.breeds[0].origin);
+
+                        const origin = document.createElement("p");
+                        origin.textContent = "Origin: " + data.breeds[0].origin;
+                        console.log(origin);
+
+                        // Add the origin to the details section
+                        catInfo.appendChild(origin);
                     });
             });
 
