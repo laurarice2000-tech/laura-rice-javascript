@@ -35,6 +35,11 @@ exploreCatsLink.addEventListener("click", () => {
                 // Set the image source to the new cat's URL
                 newCatImage.src = cat.url;
 
+                // Identify the new selected cat
+                newCatImage.addEventListener("click", () => {
+                    console.log(cat.id);
+                });
+
                 console.log(newCatImage);
 
                 // Append the new cat image to the gallery
