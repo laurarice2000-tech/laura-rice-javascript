@@ -4,12 +4,29 @@ console.log("Open API JavaScript is working.");
 // Select containers for cat results and cat information
 const catResults = document.getElementById("cat-results");
 const catInfo = document.getElementById("cat-info");
+const exploreCatsLink = document.getElementById("explore-cats-link");
 
 // Test HTML element selection
 console.log(catResults);
 console.log(catInfo);
+console.log(exploreCatsLink);
+
+// Test Explore Cats navigation
+exploreCatsLink.addEventListener("click", () => {
+    console.log("Explore Cats link clicked");
+
+    // Request new cat images
+    fetch(searchURL, requestOptions)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+        });
+});
 
 // ----- ENDPOINT 1: CAT IMAGE SEARCH -----
+
 // Store the API URL for the cat image search request
 const searchURL = "https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&limit=6";
 
@@ -114,7 +131,7 @@ fetch(searchURL, requestOptions)
                         lifeSpan.textContent = "Life Span: " + data.breeds[0].life_span;
                         console.log(lifeSpan);
 
-                        // Add the lifespan to the details section
+                        // Add the life span to the details section
                         catInfo.appendChild(lifeSpan);
 
                         // Get the selected cat's description
