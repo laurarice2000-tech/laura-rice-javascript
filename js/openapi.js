@@ -77,6 +77,16 @@ fetch(searchURL, requestOptions)
                         // Add the breed name to the details section
                         catInfo.appendChild(breedName);
 
+                        // Get the selected cat's breed group
+                        console.log("Breed Group: ", data.breeds[0].breed_group);
+
+                        const breedGroup = document.createElement("p");
+                        breedGroup.textContent = "Breed Group: " + data.breeds[0].breed_group;
+                        console.log(breedGroup);
+
+                        // Add the breed group to the details section
+                        catInfo.appendChild(breedGroup);
+
                         // Get the selected cat's temperament
                         console.log("Temperament: ", data.breeds[0].temperament);
 
