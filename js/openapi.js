@@ -22,6 +22,24 @@ exploreCatsLink.addEventListener("click", () => {
         })
         .then((data) => {
             console.log(data);
+
+            // Clear the existing cat images
+            catResults.textContent = "";
+
+            data.forEach((cat) => {
+                console.log(cat);
+
+                // Create an image element for each new cat
+                const newCatImage = document.createElement("img");
+
+                // Set the image source to the new cat's URL
+                newCatImage.src = cat.url;
+
+                console.log(newCatImage);
+
+                // Append the new cat image to the gallery
+                catResults.appendChild(newCatImage);
+            });
         });
 });
 
