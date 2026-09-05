@@ -97,7 +97,7 @@ fetch(searchURL, requestOptions)
                         // Add the origin to the details section
                         catInfo.appendChild(origin);
 
-                        // Get's the selected cat's life span
+                        // Get the selected cat's life span
                         console.log("Life Span: ", data.breeds[0].life_span);
 
                         const lifeSpan = document.createElement("p");
@@ -106,6 +106,16 @@ fetch(searchURL, requestOptions)
 
                         // Add the lifespan to the details section
                         catInfo.appendChild(lifeSpan);
+
+                        // Get the selected cat's description
+                        console.log("Description: ", data.breeds[0].description);
+
+                        const description = document.createElement("p");
+                        description.textContent = "Description: " + data.breeds[0].description;
+                        console.log(description);
+
+                        // Add the description to the details section
+                        catInfo.appendChild(description);
                     });
             });
 
