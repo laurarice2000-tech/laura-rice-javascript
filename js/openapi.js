@@ -62,9 +62,21 @@ fetch(searchURL, requestOptions)
 
                         // Set the image source to the selected cat's URL
                         detailImage.src = data.url;
-
                         console.log(detailImage);
-                    })
+
+                        // Add the selected cat's image to the details section
+                        catInfo.appendChild(detailImage);
+
+                        // Get the selected cat's breed name
+                        console.log("Breed:", data.breeds[0].name);
+
+                        const breedName = document.createElement("h3");
+                        breedName.textContent = "Breed: " + data.breeds[0].name;
+                        console.log(breedName);
+
+                        // Add the breed name to the details section
+                        catInfo.appendChild(breedName);
+                    });
             });
 
             console.log(catImage);
