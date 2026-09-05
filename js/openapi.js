@@ -116,6 +116,16 @@ fetch(searchURL, requestOptions)
 
                         // Add the description to the details section
                         catInfo.appendChild(description);
+
+                        // Get the selected cat's history
+                        console.log("History: ", data.breeds[0].history);
+
+                        const history = document.createElement("p");
+                        history.textContent = "History: " + data.breeds[0].history;
+                        console.log(history);
+
+                        // Add the history to the details section
+                        catInfo.appendChild(history);
                     });
             });
 
