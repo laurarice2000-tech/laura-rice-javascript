@@ -1,7 +1,8 @@
-// Select containers for cat results and cat information
+// Select HTML elements
 const catResults = document.getElementById("cat-results");
 const catInfo = document.getElementById("cat-info");
 const exploreCatsLink = document.getElementById("explore-cats-link");
+const catDetailsSection = document.getElementById("cat-details");
 
 // Display the selected cat's details
 function displayCatDetails(data) {
@@ -116,6 +117,9 @@ exploreCatsLink.addEventListener("click", () => {
                         })
                         .then((data) => {
                             displayCatDetails(data);
+
+                            // Jump to the Cat Details section
+                            catDetailsSection.scrollIntoView();
                         })
                         .catch((error) => {
                             console.error(error);
@@ -168,12 +172,15 @@ fetch(searchURL, requestOptions)
                     })
                     .then((data) => {
                         displayCatDetails(data);
+
+                        // Jump to the Cat Details section
+                        catDetailsSection.scrollIntoView();
                     })
                     .catch((error) => {
                         console.error(error);
                     });
             });
-            
+
             catResults.appendChild(catImage);
         });
     })
