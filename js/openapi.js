@@ -51,8 +51,7 @@ function displayCatDetails(data) {
         const history = document.createElement("p");
         history.textContent = "History: " + breed.history;
         catInfo.appendChild(history);
-    }
-    else {
+    } else {
         const noBreedInfo = document.createElement("p");
         noBreedInfo.textContent = "Breed information isn't available.";
         catInfo.appendChild(noBreedInfo);
@@ -72,7 +71,7 @@ const requestOptions = {
     }
 };
 
-// Test Explore Cats navigation
+// Handle Explore Cats navigation
 exploreCatsLink.addEventListener("click", () => {
 
     // Request new cat images
@@ -100,7 +99,7 @@ exploreCatsLink.addEventListener("click", () => {
                 // Set the image source to the new cat's URL
                 newCatImage.src = cat.url;
 
-                // Identify the selected new cat
+                // Handle selection of a new cat
                 newCatImage.addEventListener("click", () => {
 
                     // Create the detail URL for the selected new cat
@@ -132,7 +131,7 @@ exploreCatsLink.addEventListener("click", () => {
         });
 });
 
-// Request and process cat data from TheCatAPI
+// Request initial cat images
 fetch(searchURL, requestOptions)
     .then((response) => {
         if (!response.ok) {
@@ -150,7 +149,7 @@ fetch(searchURL, requestOptions)
             // Set the image source to the cat's URL
             catImage.src = cat.url;
 
-            // Identify the selected cat
+            // Handle selection of a cat
             catImage.addEventListener("click", () => {
 
                 // ----- ENDPOINT 2: SELECTED CAT DETAILS -----
@@ -174,8 +173,7 @@ fetch(searchURL, requestOptions)
                         console.error(error);
                     });
             });
-
-            console.log(catImage);
+            
             catResults.appendChild(catImage);
         });
     })
