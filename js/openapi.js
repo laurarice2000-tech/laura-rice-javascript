@@ -1,102 +1,55 @@
-// Test JavaScript connection
-console.log("Open API JavaScript is working.");
-
 // Select containers for cat results and cat information
 const catResults = document.getElementById("cat-results");
 const catInfo = document.getElementById("cat-info");
 const exploreCatsLink = document.getElementById("explore-cats-link");
 
-// Test HTML element selection
-console.log(catResults);
-console.log(catInfo);
-console.log(exploreCatsLink);
-
+// Display the selected cat's details
 function displayCatDetails(data) {
     // Clear the previous cat details
     catInfo.textContent = "";
 
-    // Create an image element for the selected cat
+    // Display the selected cat's image
     const detailImage = document.createElement("img");
-
-    // Set the image source to the selected cat's URL
     detailImage.src = data.url;
-    console.log(detailImage);
-
-    // Add the selected cat's image to the details section
     catInfo.appendChild(detailImage);
 
     // Check for breed information and display available details
     if (data.breeds.length > 0) {
         const breed = data.breeds[0];
 
-        // Get the selected cat's breed name
-        console.log("Breed:", breed.name);
-
+        // Display breed name
         const breedName = document.createElement("h3");
         breedName.textContent = "Breed: " + breed.name;
-        console.log(breedName);
-
-        // Add the breed name to the details section
         catInfo.appendChild(breedName);
 
-        // Get the selected cat's breed group
-        console.log("Breed Group: ", breed.breed_group);
-
+        // Display breed group
         const breedGroup = document.createElement("p");
         breedGroup.textContent = "Breed Group: " + breed.breed_group;
-        console.log(breedGroup);
-
-        // Add the breed group to the details section
         catInfo.appendChild(breedGroup);
 
-        // Get the selected cat's temperament
-        console.log("Temperament: ", breed.temperament);
-
+        // Display temperament
         const temperamentText = document.createElement("p");
         temperamentText.textContent = "Temperament: " + breed.temperament;
-        console.log(temperamentText);
-
-        // Add the temperament to the details section
         catInfo.appendChild(temperamentText);
 
-        // Get the selected cat's origin
-        console.log("Origin: ", breed.origin);
-
+        // Display origin
         const origin = document.createElement("p");
         origin.textContent = "Origin: " + breed.origin;
-        console.log(origin);
-
-        // Add the origin to the details section
         catInfo.appendChild(origin);
 
-        // Get the selected cat's life span
-        console.log("Life Span: ", breed.life_span);
-
+        // Display life span
         const lifeSpan = document.createElement("p");
         lifeSpan.textContent = "Life Span: " + breed.life_span;
-        console.log(lifeSpan);
-
-        // Add the life span to the details section
         catInfo.appendChild(lifeSpan);
 
-        // Get the selected cat's description
-        console.log("Description: ", breed.description);
-
+        // Display description
         const description = document.createElement("p");
         description.textContent = "Description: " + breed.description;
-        console.log(description);
-
-        // Add the description to the details section
         catInfo.appendChild(description);
 
-        // Get the selected cat's history
-        console.log("History: ", breed.history);
-
+        // Display history
         const history = document.createElement("p");
         history.textContent = "History: " + breed.history;
-        console.log(history);
-
-        // Add the history to the details section
         catInfo.appendChild(history);
     }
     else {
@@ -121,7 +74,6 @@ const requestOptions = {
 
 // Test Explore Cats navigation
 exploreCatsLink.addEventListener("click", () => {
-    console.log("Explore Cats link clicked");
 
     // Request new cat images
     fetch(searchURL, requestOptions)
@@ -133,7 +85,6 @@ exploreCatsLink.addEventListener("click", () => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
 
             // Clear the previous cat images
             catResults.textContent = "";
@@ -142,7 +93,6 @@ exploreCatsLink.addEventListener("click", () => {
             catInfo.textContent = "";
 
             data.forEach((cat) => {
-                console.log(cat);
 
                 // Create an image element for each new cat
                 const newCatImage = document.createElement("img");
@@ -152,12 +102,9 @@ exploreCatsLink.addEventListener("click", () => {
 
                 // Identify the selected new cat
                 newCatImage.addEventListener("click", () => {
-                    console.log(cat.id);
 
                     // Create the detail URL for the selected new cat
                     const detailURL = `https://api.thecatapi.com/v1/images/${cat.id}`;
-
-                    console.log(detailURL);
 
                     // Request details for the selected new cat
                     fetch(detailURL, requestOptions)
@@ -169,16 +116,12 @@ exploreCatsLink.addEventListener("click", () => {
                             return response.json();
                         })
                         .then((data) => {
-                            console.log(data);
-
                             displayCatDetails(data);
                         })
                         .catch((error) => {
                             console.error(error);
                         });
                 });
-
-                console.log(newCatImage);
 
                 // Append the new cat image to the gallery
                 catResults.appendChild(newCatImage);
@@ -199,10 +142,7 @@ fetch(searchURL, requestOptions)
         return response.json();
     })
     .then((data) => {
-        console.log(data);
-
         data.forEach((cat) => {
-            console.log(cat);
 
             // Create an image element for each cat
             const catImage = document.createElement("img");
@@ -212,14 +152,11 @@ fetch(searchURL, requestOptions)
 
             // Identify the selected cat
             catImage.addEventListener("click", () => {
-                console.log(cat.id);
 
                 // ----- ENDPOINT 2: SELECTED CAT DETAILS -----
 
                 // Create the detail URL for the selected cat
                 const detailURL = `https://api.thecatapi.com/v1/images/${cat.id}`;
-
-                console.log(detailURL);
 
                 // Request details for the selected cat
                 fetch(detailURL, requestOptions)
@@ -231,8 +168,6 @@ fetch(searchURL, requestOptions)
                         return response.json();
                     })
                     .then((data) => {
-                        console.log(data);
-
                         displayCatDetails(data);
                     })
                     .catch((error) => {
