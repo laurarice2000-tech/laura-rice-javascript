@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(176, 224, 230);
+    color: rgb(64, 64, 64);
+    margin: 0;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: rgb(25, 50, 90);
+    text-shadow: 2px 2px 4px rgb(150, 150, 150);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: rgb(25, 50, 90);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
