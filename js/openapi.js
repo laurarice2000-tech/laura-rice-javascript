@@ -31,13 +31,20 @@ exploreCatsLink.addEventListener("click", () => {
     // Request new cat images
     fetch(searchURL, requestOptions)
         .then((response) => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch cats.");
+            }
+
             return response.json();
         })
         .then((data) => {
             console.log(data);
 
-            // Clear the existing cat images
+            // Clear the previous cat images
             catResults.textContent = "";
+
+            // Clear the previous cat details
+            catInfo.textContent = "";
 
             data.forEach((cat) => {
                 console.log(cat);
@@ -60,10 +67,17 @@ exploreCatsLink.addEventListener("click", () => {
                     // Request details for the selected new cat
                     fetch(detailURL, requestOptions)
                         .then((response) => {
+                            if (!response.ok) {
+                                throw new Error("Failed to fetch cat details.");
+                            }
+
                             return response.json();
                         })
                         .then((data) => {
                             console.log(data);
+
+                            // Clear the previous cat details
+                            catInfo.textContent = "";
 
                             // Create an image element for the selected new cat
                             const detailImage = document.createElement("img");
@@ -144,6 +158,9 @@ exploreCatsLink.addEventListener("click", () => {
 
                             // Add the history to the details section
                             catInfo.appendChild(history);
+                        })
+                        .catch((error) => {
+                            console.error(error);
                         });
                 });
 
@@ -152,12 +169,19 @@ exploreCatsLink.addEventListener("click", () => {
                 // Append the new cat image to the gallery
                 catResults.appendChild(newCatImage);
             });
+        })
+        .catch((error) => {
+            console.error(error);
         });
 });
 
 // Request and process cat data from TheCatAPI
 fetch(searchURL, requestOptions)
     .then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to fetch cats.");
+        }
+
         return response.json();
     })
     .then((data) => {
@@ -186,10 +210,17 @@ fetch(searchURL, requestOptions)
                 // Request details for the selected cat
                 fetch(detailURL, requestOptions)
                     .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Failed to fetch cat details.");
+                        }
+
                         return response.json();
                     })
                     .then((data) => {
                         console.log(data);
+
+                        // Clear the previous cat details
+                        catInfo.textContent = "";
 
                         // Create an image element for the selected cat
                         const detailImage = document.createElement("img");
@@ -270,10 +301,16 @@ fetch(searchURL, requestOptions)
 
                         // Add the history to the details section
                         catInfo.appendChild(history);
+                    })
+                    .catch((error) => {
+                        console.error(error);
                     });
             });
 
             console.log(catImage);
             catResults.appendChild(catImage);
         });
+    })
+    .catch((error) => {
+        console.error(error);
     });
