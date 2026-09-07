@@ -41,19 +41,8 @@ nav ul {
     gap: 20px;
 }
 
-#back-to-top {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 8px 14px;
-    background-color: rgb(25, 50, 90);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-#back-to-top:hover {
-    background-color: rgb(40, 70, 120);
+nav a:hover {
+    color: rgb(25, 50, 90);
 }
 
 section > p {
@@ -98,4 +87,31 @@ section > p {
 
 #cat-info p {
     margin-bottom: 15px;
+}
+
+#back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 8px 14px;
+    background-color: rgb(25, 50, 90);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#back-to-top:hover {
+    background-color: rgb(40, 70, 120);
+}
+
+@media (max-width: 800px) {
+    #cat-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    #cat-results {
+        grid-template-columns: 1fr;
+    }
 }
