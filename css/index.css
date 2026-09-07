@@ -148,6 +148,15 @@ li {
     padding: 8px;
 }
 
+#projects li p {
+    margin: 8px 0;
+}
+
+#projects a:hover {
+    background-color: rgb(45, 75, 125);
+    color: white;
+}
+
 @media (max-width: 600px) {
     #message-form input, #message-form textarea {
         padding: 12px;

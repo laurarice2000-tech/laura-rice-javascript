@@ -127,7 +127,7 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
     })
     .then(function(repos) {
         const repositories = repos;
-        console.log(repositories);
+        //console.log(repositories);
 
         return repositories;
     })
@@ -135,7 +135,29 @@ fetch("https://api.github.com/users/laurarice2000-tech/repos")
         // Add each GitHub repository to the Projects list
         for (let i = 0; i < repositories.length; i++) {
             const project = document.createElement("li");
-            project.innerText = repositories[i]["name"];
+
+            const projectLink = document.createElement("a");
+            projectLink.innerText = repositories[i]["name"];
+            projectLink.href = repositories[i]["html_url"];
+
+            project.appendChild(projectLink);
+
+            const projectDescription = document.createElement("p");
+            projectDescription.innerText = repositories[i]["description"];
+            project.appendChild(projectDescription);
+
+            const projectCreatedDate = document.createElement("p");
+            const createdDate = new Date(repositories[i]["created_at"]);
+
+            const month = createdDate.getMonth() + 1;
+            const day = createdDate.getDate();
+            const year = createdDate.getFullYear();
+
+            const formattedDate = `Created: ${month}/${day}/${year}`;
+
+            projectCreatedDate.innerText = formattedDate;
+            project.appendChild(projectCreatedDate);
+
             projectList.appendChild(project);
         }
     })
