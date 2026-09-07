@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(176, 224, 230);
+    color: rgb(64, 64, 64);
+    margin: 0;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: rgb(25, 50, 90);
+    text-shadow: 2px 2px 4px rgb(150, 150, 150);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: rgb(25, 50, 90);
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(45, 75, 125);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a:hover {
+    color: rgb(25, 50, 90);
+}
+
+section > p {
+    margin-bottom: 20px;
+}
+
+#cat-results img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#cat-results {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 10px;
+    justify-content: center;
+}
+
+#cat-results img:hover {
+    filter: brightness(1.1) saturate(1.4);
+    box-shadow: 0 4px 10px rgb(100, 100, 100);
+}
+
+#cat-info {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#cat-info img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+#cat-info h3 {
+    margin-top: 20px;
+}
+
+#cat-info p {
+    margin-bottom: 15px;
+}
+
+#back-to-top {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 8px 14px;
+    background-color: rgb(25, 50, 90);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#back-to-top:hover {
+    background-color: rgb(40, 70, 120);
+}
+
+@media (max-width: 800px) {
+    #cat-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    #cat-results {
+        grid-template-columns: 1fr;
+    }
+}
