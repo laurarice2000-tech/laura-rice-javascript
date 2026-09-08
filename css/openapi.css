@@ -9,7 +9,11 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: 20px 20px 8px;
+}
+
+header > p {
+    margin-bottom: 8px;
 }
 
 h1 {
@@ -33,6 +37,12 @@ h3 {
     color: rgb(45, 75, 125);
 }
 
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -41,8 +51,13 @@ nav ul {
     gap: 20px;
 }
 
+nav a {
+    padding: 12px 10px;
+}
+
 nav a:hover {
-    color: rgb(25, 50, 90);
+    background-color: rgb(25, 50, 90);
+    color: white;
 }
 
 section > p {
