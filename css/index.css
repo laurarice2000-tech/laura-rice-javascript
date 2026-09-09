@@ -117,6 +117,12 @@ img {
     color: white;
 }
 
+#messages ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 #messages button {
     margin-left: 8px;
     padding: 6px 12px;
