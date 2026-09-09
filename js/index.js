@@ -23,6 +23,22 @@ const skillsSection = document.getElementById("skills");
 // Select the skills list within the Skills section
 const skillsList = skillsSection.querySelector("ul");
 
+// Select the hamburger menu button
+const menuButton = document.getElementById("menu-button");
+
+// Select the navigation menu
+const navMenu = document.querySelector("nav ul");
+
+// Handle hamburger menu clicks
+menuButton.addEventListener("click", function() {
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
+    }
+    else {
+        navMenu.style.display = "flex";
+    }
+});
+
 // Add each skill to the skills list
 for (let i = 0; i < skills.length; i++) {
     const skill = document.createElement("li");

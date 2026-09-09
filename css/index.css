@@ -52,6 +52,10 @@ nav a:hover {
     color: white;
 }
 
+#menu-button {
+    display: none;
+}
+
 img {
     display: block;
     margin: 0 auto 24px;
@@ -184,6 +188,17 @@ li {
 }
 
 @media (max-width: 600px) {
+    #menu-button {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
     #message-form input, #message-form textarea {
         padding: 12px;
     }

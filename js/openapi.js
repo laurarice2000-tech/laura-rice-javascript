@@ -4,6 +4,22 @@ const catInfo = document.getElementById("cat-info");
 const exploreCatsLink = document.getElementById("explore-cats-link");
 const catDetailsSection = document.getElementById("cat-details");
 
+// Select the hamburger menu button
+const menuButton = document.getElementById("menu-button");
+
+// Select the navigation menu
+const navMenu = document.querySelector("nav ul");
+
+// Handle hamburger menu clicks
+menuButton.addEventListener("click", function() {
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
+    }
+    else {
+        navMenu.style.display = "flex";
+    }
+});
+
 // Display the selected cat's details
 function displayCatDetails(data) {
     // Clear the previous cat details
