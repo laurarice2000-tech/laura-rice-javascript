@@ -28,6 +28,7 @@ function displayCatDetails(data) {
     // Display the selected cat's image
     const detailImage = document.createElement("img");
     detailImage.src = data.url;
+    detailImage.alt = "Selected cat";
     catInfo.appendChild(detailImage);
 
     // Check for breed information and display available details
@@ -115,6 +116,7 @@ exploreCatsLink.addEventListener("click", () => {
 
                 // Set the image source to the new cat's URL
                 newCatImage.src = cat.url;
+                newCatImage.alt = "Cat image";
 
                 // Handle selection of a new cat
                 newCatImage.addEventListener("click", () => {
@@ -168,6 +170,7 @@ fetch(searchURL, requestOptions)
 
             // Set the image source to the cat's URL
             catImage.src = cat.url;
+            catImage.alt = "Cat image";
 
             // Handle selection of a cat
             catImage.addEventListener("click", () => {
