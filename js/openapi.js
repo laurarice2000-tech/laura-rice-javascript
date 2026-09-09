@@ -28,7 +28,7 @@ function displayCatDetails(data) {
     // Display the selected cat's image
     const detailImage = document.createElement("img");
     detailImage.src = data.url;
-    detailImage.alt = "Selected cat";
+    detailImage.alt = "Selected cat image";
     catInfo.appendChild(detailImage);
 
     // Check for breed information and display available details
